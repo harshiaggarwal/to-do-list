@@ -1,6 +1,6 @@
 prompt = "Enter a task to do:"
-
+tasks = []
 while True:
     task = input(prompt)
-    print(task)
-    print("Next...")
+    tasks.append(task.title())
+    print(tasks, "Next...")
