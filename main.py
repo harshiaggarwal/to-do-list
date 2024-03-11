@@ -1,6 +1,12 @@
-prompt = "Enter a task to do:"
 tasks = []
 while True:
-    task = input(prompt)
-    tasks.append(task.title())
-    print(tasks, "Next...")
+    action = input("Type add, show or exit:")
+    match action:
+        case "add":
+            task = input("Enter a task: ")
+            tasks.append(task.title())
+        case "show":
+            print(tasks)
+        case "exit":
+            print("Bye!")
+            break
