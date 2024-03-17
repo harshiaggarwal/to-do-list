@@ -31,6 +31,11 @@ while True:
 
         # to display the list
         case "show" | "display":
+
+            file = open("tasks.txt", "r")
+            tasks = file.readlines()
+            file.close()
+            
             for index, item in enumerate(tasks):
                 print(f"{index + 1}-{item}")
 
