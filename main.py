@@ -23,8 +23,8 @@ while True:
 
         # to display the list
         case "show" | "display":
-            for item in tasks:
-                print(item)
+            for index, item in enumerate(tasks):
+                print(index, '-', item)
 
         # to exit when done
         case "exit":
