@@ -2,7 +2,7 @@ tasks = []
 
 # reads user input and performs action
 while True:
-    action = input("Type add, edit, show or exit: ")
+    action = input("Type add, edit, show, complete or exit: ")
 
     # removing trailing spaces
     action = action.strip()
@@ -24,7 +24,12 @@ while True:
         # to display the list
         case "show" | "display":
             for index, item in enumerate(tasks):
-                print(f"{index}-{item}")
+                print(f"{index + 1}-{item}")
+
+        # to complete a task
+        case "complete":
+            number = input("Enter a task number to mark complete: ")
+            tasks.pop(int(number) - 1)            
 
         # to exit when done
         case "exit":
