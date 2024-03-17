@@ -24,7 +24,7 @@ while True:
         # to display the list
         case "show" | "display":
             for index, item in enumerate(tasks):
-                print(index, '-', item)
+                print(f"{index}-{item}")
 
         # to exit when done
         case "exit":
