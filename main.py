@@ -1,5 +1,3 @@
-tasks = []
-
 # reads user input and performs action
 while True:
     action = input("Type add, edit, show, complete or exit: ")
@@ -8,11 +6,21 @@ while True:
     action = action.strip()
 
     match action:
-        # to add a task in the list and change it to title case
+    
+        # to read tasks from the file and add tasks
         case "add":
-            task = input("Enter a task: ")
-            tasks.append(task.title())
+            task = input("Enter a task: ") + "\n"
 
+            file = open("tasks.txt", "r")
+            tasks = file.readlines()
+            file.close()
+            
+            tasks.append(task.title())
+            
+            file = open("tasks.txt", "r")
+            file.writelines(tasks)
+            file.close()
+    
         # to edit the tasks
         case "edit":
             number = input("Enter a task number to edit: ")
