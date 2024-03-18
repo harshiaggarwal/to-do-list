@@ -36,7 +36,8 @@ while True:
             file.close()
             
             for index, item in enumerate(tasks):
-                print(f"{index + 1}-{item}")
+                item = item.strip("\n")
+                print(f"{index + 1}. {item}")
 
         # to complete a task
         case "complete":
