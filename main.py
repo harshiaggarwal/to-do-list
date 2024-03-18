@@ -31,7 +31,6 @@ while True:
 
         # to display the list
         case "show" | "display":
-
             file = open("tasks.txt", "r")
             tasks = file.readlines()
             file.close()
@@ -41,8 +40,16 @@ while True:
 
         # to complete a task
         case "complete":
+            file = open("tasks.txt", "r")
+            tasks = file.readlines()
+            file.close()
+
             number = input("Enter a task number to mark complete: ")
-            tasks.pop(int(number) - 1)            
+            tasks.pop(int(number) - 1)
+
+            file = open("tasks.txt", "w")
+            file.writelines(tasks)
+            file.close()           
 
         # to exit when done
         case "exit":
